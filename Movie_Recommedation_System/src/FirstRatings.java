@@ -23,7 +23,7 @@ public class FirstRatings {
         FileResource fr = new FileResource(path);
         CSVParser parser = fr.getCSVParser();
         for (CSVRecord record : parser) {
-            Rater newRater = new Rater(record.get("rater_id"));
+            Rater newRater = new EfficientRater(record.get("rater_id"));
             if (raterIDList.contains(record.get("rater_id"))) {
                 raterList.get(raterIDList.indexOf(record.get("rater_id"))).addRating(record.get("movie_id"), Double.parseDouble(record.get("rating")));
             } else {

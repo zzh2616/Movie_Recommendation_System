@@ -1,6 +1,6 @@
 import java.util.*;
-import org.apache.commons.csv.*;
-import edu.duke.FileResource;
+//import org.apache.commons.csv.*;
+//import edu.duke.FileResource;
 
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
@@ -8,14 +8,14 @@ public class MovieDatabase {
     public static void initialize(String moviefile) {
         if (ourMovies == null) {
             ourMovies = new HashMap<String,Movie>();
-            loadMovies("data/" + moviefile);
+            loadMovies(moviefile);
         }
     }
 
-    private static void initialize() {
+    public static void initialize() {
         if (ourMovies == null) {
             ourMovies = new HashMap<String,Movie>();
-            loadMovies("data/ratedmoviesfull.csv");
+            loadMovies("ratedmoviesfull.csv");
         }
     }	
 

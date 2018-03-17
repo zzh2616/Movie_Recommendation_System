@@ -2,7 +2,7 @@ import edu.duke.*;
 import java.util.*;
 import org.apache.commons.csv.*;
 
-public class FirstRating {
+public class FirstRatings {
     public ArrayList<Movie> loadMovies(String fname) {
         ArrayList<Movie> movieList = new ArrayList<Movie>();
         String path = "./data/" + fname;
@@ -35,10 +35,10 @@ public class FirstRating {
         return raterList;
     }
 
-    public static void main(String[] args) {
-        FirstRating test = new FirstRating();
+/*    public static void main(String[] args) {
+        FirstRatings test = new FirstRatings();
         // test loadMovies method
-/*        ArrayList<Movie> movieList = test.loadMovies("ratedmoviesfull.csv");
+        ArrayList<Movie> movieList = test.loadMovies("ratedmoviesfull.csv");
         // System.out.println(movieList);
         System.out.println("movie list size: " + movieList.size());
         int genreCount = 0;
@@ -85,16 +85,16 @@ public class FirstRating {
             }
         }
         System.out.println("number of high output directors is: " + directorList.size());
-        System.out.println("high output directors are " + directorList);*/
+        System.out.println("high output directors are " + directorList);
         // test loadRaters method
         ArrayList<Rater> raterList = test.loadRaters("ratings.csv");
         System.out.println("number of raters: " + raterList.size());
-/*        for (Rater rater : raterList) {
+        for (Rater rater : raterList) {
             System.out.println("rater id: " + rater.getID() + " number of rating: " + rater.numRatings());
             for (String ratedItem : rater.getItemsRated()) {
                 System.out.println(ratedItem + ": " + rater.getRating(ratedItem));
             }
-        }*/
+        }
         String raterID = "193";
         for (Rater rater : raterList) {
             if (rater.getID().equals(raterID)) {
@@ -135,4 +135,4 @@ public class FirstRating {
         }
         System.out.println("number of rated movies: " + ratedMovieList.size());
     }
-}
+*/}

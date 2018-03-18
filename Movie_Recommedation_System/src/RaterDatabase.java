@@ -23,13 +23,13 @@ public class RaterDatabase {
     public static void initialize(String filename) {
  		if (ourRaters == null) {
  			ourRaters= new HashMap<String,Rater>();
- 			addRatings("data/" + filename);
+ 			addRatings(filename);
  		}
  	}	
  	
     public static void addRatings(String filename) {
         initialize(); 
-        FileResource fr = new FileResource(filename);
+        FileResource fr = new FileResource("data/" + filename);
         CSVParser csvp = fr.getCSVParser();
         for(CSVRecord rec : csvp) {
                 String id = rec.get("rater_id");
@@ -42,14 +42,14 @@ public class RaterDatabase {
     public static void addRaterRating(String raterID, String movieID, double rating) {
         initialize(); 
         Rater rater =  null;
-                if (ourRaters.containsKey(raterID)) {
-                    rater = ourRaters.get(raterID); 
-                } 
-                else { 
-                    rater = new EfficientRater(raterID);
-                    ourRaters.put(raterID,rater);
-                 }
-                 rater.addRating(movieID,rating);
+        if (ourRaters.containsKey(raterID)) {
+            rater = ourRaters.get(raterID); 
+        } 
+        else { 
+            rater = new EfficientRater(raterID);
+            ourRaters.put(raterID,rater);
+         }
+         rater.addRating(movieID,rating);
     } 
 	         
     public static Rater getRater(String id) {

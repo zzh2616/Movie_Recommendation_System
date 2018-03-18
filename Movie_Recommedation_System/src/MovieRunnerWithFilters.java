@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class MovieRunnerWithFilters {
     public void printAvergeRatings() {
-        MovieDatabase.initialize();
+        MovieDatabase.initialize("ratedmoviesfull.csv");
         ThirdRatings movieRater = new ThirdRatings();     
         System.out.println("number of movies: " + MovieDatabase.size());
         System.out.println("number of raters: " + movieRater.getRaterSize());
@@ -16,7 +16,7 @@ public class MovieRunnerWithFilters {
     }
     
     public void printAvergeRatingsByFilter() {
-        MovieDatabase.initialize();
+        MovieDatabase.initialize("ratedmoviesfull.csv");
         ThirdRatings movieRater = new ThirdRatings();     
         System.out.println("number of movies: " + MovieDatabase.size());
         System.out.println("number of raters: " + movieRater.getRaterSize());

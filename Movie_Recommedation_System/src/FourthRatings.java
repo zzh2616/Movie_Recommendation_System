@@ -1,4 +1,3 @@
-import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -80,7 +79,7 @@ public class FourthRatings {
         ArrayList<String> myMovies = MovieDatabase.filterBy(new TrueFilter());
         for (String movie : myMovies) {
             double totRating = 0;
-            double totWeight = 0;
+//            double totWeight = 0;
             int numRater = 0;
             for (int i = 0; i < numSimilarRaters; i++) {
                 String raterID = simiList.get(i).getItem();
@@ -88,7 +87,7 @@ public class FourthRatings {
                 if (RaterDatabase.getRater(raterID).hasRating(movie)) {
                     numRater++;
                     totRating += weight*RaterDatabase.getRater(raterID).getRating(movie);
-                    totWeight += weight;
+//                    totWeight += weight;
                 }
             }
             if (numRater >= minNumRater) {
@@ -105,7 +104,7 @@ public class FourthRatings {
         ArrayList<String> myMovies = MovieDatabase.filterBy(f);
         for (String movie : myMovies) {
             double totRating = 0;
-            double totWeight = 0;
+//            double totWeight = 0;
             int numRater = 0;
             for (int i = 0; i < numSimilarRaters; i++) {
                 String raterID = simiList.get(i).getItem();
@@ -113,7 +112,7 @@ public class FourthRatings {
                 if (RaterDatabase.getRater(raterID).hasRating(movie)) {
                     numRater++;
                     totRating += weight*RaterDatabase.getRater(raterID).getRating(movie);
-                    totWeight += weight;
+//                    totWeight += weight;
                 }
             }
             if (numRater >= minNumRater) {

@@ -76,6 +76,10 @@ public class FourthRatings {
     public ArrayList<Rating> getSimilarRatings(String id, int numSimilarRaters, int minNumRater) {
         ArrayList<Rating> simiRatingList = new ArrayList<Rating>();
         ArrayList<Rating> simiList = getSimilarities(id);
+//        in case that the similarity score list has a smaller size than the numSimilarRaters
+        if (simiList.size() < numSimilarRaters) {
+            numSimilarRaters = simiList.size();
+        }
         ArrayList<String> myMovies = MovieDatabase.filterBy(new TrueFilter());
         for (String movie : myMovies) {
             double totRating = 0;
